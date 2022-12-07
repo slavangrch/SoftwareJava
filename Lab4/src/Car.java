@@ -3,40 +3,42 @@ import java.lang.String;
 
 public class Car {
     private String name;
-    private String model;
-    private int amountOfSeats;
+    private String typeOfEngine;
+    private int quantityOfAirBags;
     private int maxSpeed;
     private String origin;
 
-    public String GetName() { return name; }
-
-    public String GetType() {
-        return model;
+    public String getName() {
+        return name;
     }
 
-    public int GetAos() {
-        return amountOfSeats;
+    public String getTypeOfEngine() {
+        return typeOfEngine;
     }
 
-    public int GetMaxS() {
+    public int getQuantityOfAirBags() {
+        return quantityOfAirBags;
+    }
+
+    public int getMaxSpeed() {
         return maxSpeed;
     }
 
-    public String GetOrigin() {
+    public String getOrigin() {
         return origin;
     }
 
-    public Car(String name, String model, int aos, int maxspeeed, String origin) {
+    public Car(String name, String typeofengine, int quantityofairbags, int maxspeeed, String origin) {
         this.name = name;
-        this.model = model;
-        this.amountOfSeats = aos;
+        this.typeOfEngine = typeofengine;
+        this.quantityOfAirBags = quantityofairbags;
         this.maxSpeed = maxspeeed;
         this.origin = origin;
     }
 
     @Override
     public String toString() {
-        return "[name = " + this.name + " model = " + this.model + " amount of seats = " + this.amountOfSeats + " max speed = " +
+        return "[name = " + this.name + " type of engine = " + this.typeOfEngine + " quantity of air bags = " + this.quantityOfAirBags + " max speed = " +
                 this.maxSpeed + " origin = " + this.origin + "]";
     }
 
@@ -50,7 +52,7 @@ public class Car {
             return result;
         }
     }
-    public static Comparator<Car> aosComparator = (e1, e2) -> (e2.GetAos() - e1.GetAos());
+    public static Comparator<Car> quantityOfAirBagsComparator = (e1, e2) -> (e2.getQuantityOfAirBags() - e1.getQuantityOfAirBags());
 
-    public static Comparator<Car> maxSpeedComparator = (e1, e2) -> (e1.GetMaxS() - e2.GetMaxS());
+    public static Comparator<Car> maxSpeedComparator = (e1, e2) -> (e1.getMaxSpeed() - e2.getMaxSpeed());
 }
